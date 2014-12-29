@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 CozE. All rights reserved.
 //
 
-//test comment
-
 #import "MyTripViewController.h"
 #import "Store.h"
 #import "MyTripStoreTableCell.h"
