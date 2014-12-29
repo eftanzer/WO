@@ -42,7 +42,7 @@ NSString * const kWORecommendParking = @"Recommend Parking";
     
     [self drawParkingMenuItems];
     
-    [self.parkingMenuCollectionView registerNib:[UINib nibWithNibName:@"CollectionCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
+    [self.parkingMenuCollectionView registerNib:[UINib nibWithNibName:@"MenuCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
     
     [self setMenuCollectionViewSize];
 }

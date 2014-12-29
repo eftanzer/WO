@@ -14,8 +14,8 @@
 @property (strong, nonatomic) NSString *desc;
 @property (strong, nonatomic) NSString *hours;
 @property (strong, nonatomic) NSString *phoneNumber;
-@property (nonatomic) BOOL addedtoTrip;
-@property (strong, nonatomic) NSNumber *tripNumber;
+@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) NSArray *shoppingListItems;
 
 +(NSArray *)listOfStores;
 

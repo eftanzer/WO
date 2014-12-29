@@ -53,7 +53,7 @@ NSInteger const kWONumberOfMenuItems = 6;
     //self.menuItems = @[@"Parking",@"Mall Map",@"Stores",@"Pee",@"Info",@"Shopping List",@"Route"];
     //self.menuItemSegues = @[@"parkingSegue",@"mallMapSegue",@"storesSegue",@"peeSegue",@"infoSegue",@"shoppingListSegue",@"routeSegue"];
     
-    [self.menuCollectionView registerNib:[UINib nibWithNibName:@"CollectionCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
+    [self.menuCollectionView registerNib:[UINib nibWithNibName:@"MenuCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
     
     [self setMenuCollectionViewSize];
 }
