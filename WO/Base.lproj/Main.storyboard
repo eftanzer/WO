@@ -160,13 +160,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <searchBar contentMode="redraw" placeholder="Search generically and add details" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-M2-2tf">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="m8X-CE-9BA" id="it0-jI-1kw"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wga-UH-20I">
                                 <rect key="frame" x="16" y="150" width="568" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,15 +251,12 @@
                         <constraints>
                             <constraint firstItem="evY-ha-Je7" firstAttribute="leading" secondItem="kAe-ro-tPr" secondAttribute="leadingMargin" id="4sU-rZ-7Kq"/>
                             <constraint firstItem="PXA-Eh-KiS" firstAttribute="top" secondItem="Wga-UH-20I" secondAttribute="bottom" constant="20" id="58j-ah-TM6"/>
-                            <constraint firstItem="evY-ha-Je7" firstAttribute="top" secondItem="xAv-M2-2tf" secondAttribute="bottom" constant="8" id="8vt-2E-vJm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xAv-M2-2tf" secondAttribute="trailing" constant="-16" id="H9u-o7-oxK"/>
                             <constraint firstItem="Wga-UH-20I" firstAttribute="trailing" secondItem="kAe-ro-tPr" secondAttribute="trailingMargin" id="LKb-Zl-G7a"/>
                             <constraint firstItem="KJP-tA-0zI" firstAttribute="trailing" secondItem="kAe-ro-tPr" secondAttribute="trailingMargin" id="OaY-Y1-gfR"/>
                             <constraint firstItem="Wga-UH-20I" firstAttribute="top" secondItem="evY-ha-Je7" secondAttribute="bottom" constant="4" id="QME-vn-ety"/>
-                            <constraint firstItem="xAv-M2-2tf" firstAttribute="top" secondItem="8fH-Ur-LKh" secondAttribute="bottom" id="RVa-ty-DAU"/>
-                            <constraint firstItem="xAv-M2-2tf" firstAttribute="leading" secondItem="kAe-ro-tPr" secondAttribute="leadingMargin" constant="-16" id="Sgs-4h-7nO"/>
+                            <constraint firstItem="evY-ha-Je7" firstAttribute="top" secondItem="8fH-Ur-LKh" secondAttribute="bottom" constant="52" id="gLg-05-TLy"/>
+                            <constraint firstItem="KJP-tA-0zI" firstAttribute="top" secondItem="8fH-Ur-LKh" secondAttribute="bottom" constant="52" id="m8c-P9-FfI"/>
                             <constraint firstItem="Wga-UH-20I" firstAttribute="leading" secondItem="kAe-ro-tPr" secondAttribute="leadingMargin" id="uZk-8K-N8m"/>
-                            <constraint firstItem="KJP-tA-0zI" firstAttribute="top" secondItem="xAv-M2-2tf" secondAttribute="bottom" constant="8" id="xTL-As-eeq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -278,7 +268,6 @@
                 <searchDisplayController id="Oi2-c8-7Cl">
                     <connections>
                         <outlet property="delegate" destination="m8X-CE-9BA" id="zn6-d8-JRU"/>
-                        <outlet property="searchBar" destination="xAv-M2-2tf" id="s7Q-8C-oor"/>
                         <outlet property="searchContentsController" destination="m8X-CE-9BA" id="R3Z-dw-1Tm"/>
                         <outlet property="searchResultsDataSource" destination="m8X-CE-9BA" id="Ihc-EA-FyY"/>
                         <outlet property="searchResultsDelegate" destination="m8X-CE-9BA" id="oel-lO-OXX"/>

@@ -7,6 +7,8 @@
 //
 
 #import "ShoppingListViewController.h"
+#import "ShoppingListSearchResultsTableView.h"
+#import "ProductCategory.h"
 
 @interface ShoppingListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -17,12 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupProductCategories];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupProductCategories {
+    self.productCategories = [[NSArray alloc] initWithArray:[ProductCategory listOfCategories]];
+    NSLog(@"Categories: %@",self.productCategories);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

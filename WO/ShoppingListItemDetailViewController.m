@@ -30,6 +30,11 @@
     return cell;
 }
 
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewCellAccessoryCheckmark;
+}
+
 /*
 #pragma mark - Navigation
 

@@ -22,8 +22,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK4-2z-WFE">
-                        <rect key="frame" x="45" y="12" width="267" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK4-2z-WFE">
+                        <rect key="frame" x="45" y="11" width="267" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                     <constraint firstItem="lK4-2z-WFE" firstAttribute="trailing" secondItem="zR2-f6-bII" secondAttribute="trailingMargin" id="YYN-6N-j4h"/>
                     <constraint firstAttribute="centerY" secondItem="3mV-6R-V9N" secondAttribute="centerY" constant="0.5" id="kaV-sV-Vbz"/>
                     <constraint firstItem="3mV-6R-V9N" firstAttribute="leading" secondItem="zR2-f6-bII" secondAttribute="leadingMargin" id="qyx-1x-CxP"/>
-                    <constraint firstAttribute="centerY" secondItem="lK4-2z-WFE" secondAttribute="centerY" constant="-0.5" id="x5q-7O-0J7"/>
+                    <constraint firstAttribute="centerY" secondItem="lK4-2z-WFE" secondAttribute="centerY" id="x5q-7O-0J7"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

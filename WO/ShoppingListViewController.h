@@ -10,4 +10,6 @@
 
 @interface ShoppingListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSArray *productCategories;
+
 @end

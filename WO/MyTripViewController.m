@@ -57,30 +57,6 @@
     NSLog(@"Categories: %@",self.categories);
 }
 
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    searchResults = [self.categories filteredArrayUsingPredicate:resultPredicate];
-    NSLog(@"%@",searchResults);
-}
-
-#pragma mark - UISearchDisplayController Delegate Methods
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    // Tells the table data source to reload when text changes
-    [self filterContentForSearchText:searchString scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
-    // Tells the table data source to reload when scope bar selection changes
-    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
 - (IBAction)orderManually:(id)sender {
     if (self.inEditMode) {
         [self.manuallyOrderButton setTitle:@"Manually Order" forState:UIControlStateNormal];
@@ -92,6 +68,7 @@
         self.tableView.editing = YES;
     }
 }
+
 - (IBAction)collapseExpandMap:(id)sender {
     if (self.mapViewVisible) {
         self.mapView.hidden = YES;
@@ -123,7 +100,7 @@
     return cell;
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {    
     return UITableViewCellAccessoryDisclosureIndicator;
 }
 
