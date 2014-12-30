@@ -29,6 +29,7 @@
 		6361DF001A4E1B6A00BEBE44 /* WrenthamMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6361DEFF1A4E1B6A00BEBE44 /* WrenthamMap.png */; };
 		6361DF021A4E1DEC00BEBE44 /* home_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 6361DF011A4E1DEC00BEBE44 /* home_w.png */; };
 		63800E491A4E25BE00732274 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63800E481A4E25BE00732274 /* InfoViewController.m */; };
+		63A3B5FE1A520E75003708B9 /* ProductCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3B5FD1A520E75003708B9 /* ProductCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		6361DF011A4E1DEC00BEBE44 /* home_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_w.png; sourceTree = "<group>"; };
 		63800E471A4E25BE00732274 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		63800E481A4E25BE00732274 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		63A3B5FC1A520E75003708B9 /* ProductCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
+		63A3B5FD1A520E75003708B9 /* ProductCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCategory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 		63291FFB1A4FD3DF00CF7658 /* Object Classes */ = {
 			isa = PBXGroup;
 			children = (
+				63A3B5FC1A520E75003708B9 /* ProductCategory.h */,
+				63A3B5FD1A520E75003708B9 /* ProductCategory.m */,
 				63291FF81A4FD3D800CF7658 /* Store.h */,
 				63291FF91A4FD3D800CF7658 /* Store.m */,
 			);
@@ -335,6 +340,7 @@
 				6353BF181A4DEBA400DC2E7C /* MenuCollectionCell.m in Sources */,
 				6353BEF41A4DE53500DC2E7C /* WO.xcdatamodeld in Sources */,
 				63291FF41A4E733600CF7658 /* StoreDetailViewController.m in Sources */,
+				63A3B5FE1A520E75003708B9 /* ProductCategory.m in Sources */,
 				6353BEF71A4DE53500DC2E7C /* MainViewController.m in Sources */,
 				63291FEE1A4E649E00CF7658 /* ShoppingListViewController.m in Sources */,
 				632920001A51BFCB00CF7658 /* MyTripStoreTableCell.m in Sources */,

@@ -9,6 +9,7 @@
 #import "MyTripViewController.h"
 #import "Store.h"
 #import "MyTripStoreTableCell.h"
+#import "ProductCategory.h"
 
 @interface MyTripViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -19,10 +20,14 @@
 @property (nonatomic) BOOL mapViewVisible;
 @property (weak, nonatomic) IBOutlet UIView *storesView;
 @property (nonatomic) BOOL storesViewVisible;
+@property (strong, nonatomic) NSArray *categories;
 
 @end
 
 @implementation MyTripViewController
+{
+    NSArray *searchResults;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +38,7 @@
 
 - (void)setup {
     [self loadStoresForTrip];
+    [self populateCategories];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"MyTripStoreTableCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     
@@ -44,6 +50,35 @@
 - (void)loadStoresForTrip {
     self.storesInTrip = [[NSMutableArray alloc] initWithArray:[Store listOfStores]];
     NSLog(@"Stores: %@",self.storesInTrip);
+}
+
+- (void)populateCategories {
+    self.categories = [[NSArray alloc] initWithArray:[ProductCategory listOfCategories]];
+    NSLog(@"Categories: %@",self.categories);
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    searchResults = [self.categories filteredArrayUsingPredicate:resultPredicate];
+    NSLog(@"%@",searchResults);
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 - (IBAction)orderManually:(id)sender {
@@ -83,7 +118,6 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MyTripStoreTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    //cell.numberLabel.text = [NSString stringWithFormat:@"%@", [[self.storesInTrip objectAtIndex:indexPath.row] tripNumber]];
     cell.numberLabel.text = [NSString stringWithFormat:@"%ld", (indexPath.row +1)];
     cell.storeNameLabel.text = [[self.storesInTrip objectAtIndex:indexPath.row] name];
     return cell;
