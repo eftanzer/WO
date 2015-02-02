@@ -7,7 +7,11 @@
 //
 //
 #import <UIKit/UIKit.h>
+#import "Store.h"
 
 @interface StoreDetailViewController : UIViewController
+
+@property (strong, nonatomic) Store *store;
+@property (weak, nonatomic) IBOutlet UIButton *addToTripButton;
 
 @end

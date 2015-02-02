@@ -1,24 +1,24 @@
 //
-//  Store.m
+//  ShoppingListItem.m
 //  WO
 //
 //  Created by Ezra on 1/24/15.
 //  Copyright (c) 2015 CozE. All rights reserved.
 //
 
-#import "Store.h"
-#import "ShoppingCategory.h"
 #import "ShoppingListItem.h"
+#import "ShoppingCategory.h"
+#import "Store.h"
 #import "Trip.h"
 
 
-@implementation Store
+@implementation ShoppingListItem
 
 @dynamic desc;
 @dynamic name;
-@dynamic categories;
-@dynamic linkedShoppingListItems;
-@dynamic potentialShoppingListItems;
+@dynamic category;
+@dynamic linkedStores;
+@dynamic potentialStores;
 @dynamic trip;
 
 @end

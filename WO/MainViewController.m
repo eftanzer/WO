@@ -11,13 +11,14 @@
 #import "ParkingViewController.h"
 
 typedef NS_ENUM(NSInteger, WOMenuItems) {
+    WOStores,
     WOMallMap,
     WOShoppingList,
     WOMyTrip,
-    WOParking,
+    //WOParking,
     WOInfo,
     WOResetTrip,
-};
+    };
 
 
 NSString * const kWOMallMap = @"Mall Map";
@@ -26,6 +27,7 @@ NSString * const kWOMyTrip = @"My Trip";
 NSString * const kWOParking = @"Parking";
 NSString * const kWOInfo = @"Info";
 NSString * const kWOResetTrip = @"Reset Trip";
+NSString * const kWOStores = @"Stores";
 
 
 NSString * const kWOMallMapSegue = @"MallMapSegue";
@@ -33,6 +35,7 @@ NSString * const kWOShoppingListSegue = @"ShoppingListSegue";
 NSString * const kWOMyTripSegue = @"MyTripSegue";
 NSString * const kWOParkingSegue = @"ParkingSegue";
 NSString * const kWOInfoSegue = @"InfoSegue";
+NSString * const kWOStoresSegue = @"StoresSegue";
 
 NSInteger const kWONumberOfMenuItems = 6;
 
@@ -85,9 +88,10 @@ NSInteger const kWONumberOfMenuItems = 6;
         case WOMallMap: menuTitleText = kWOMallMap; break;
         case WOShoppingList: menuTitleText = kWOShoppingList; break;
         case WOMyTrip: menuTitleText = kWOMyTrip; break;
-        case WOParking: menuTitleText = kWOParking; break;
+        //case WOParking: menuTitleText = kWOParking; break;
         case WOInfo: menuTitleText = kWOInfo; break;
         case WOResetTrip: menuTitleText = kWOResetTrip; break;
+        case WOStores: menuTitleText = kWOStores; break;
         default: nil;
     }
     //cell.titleLabel.text = [self.menuItems objectAtIndex:indexPath.row];
@@ -105,8 +109,9 @@ NSInteger const kWONumberOfMenuItems = 6;
         case WOMallMap: segueName = kWOMallMapSegue; break;
         case WOShoppingList: segueName = kWOShoppingListSegue; break;
         case WOMyTrip: segueName = kWOMyTripSegue; break;
-        case WOParking: segueName = kWOParkingSegue; break;
+        //case WOParking: segueName = kWOParkingSegue; break;
         case WOInfo: segueName = kWOInfoSegue; break;
+        case WOStores: segueName = kWOStoresSegue; break;
         default: nil;
     }
     

@@ -7,6 +7,9 @@
 //
 //
 #import "StoreDetailViewController.h"
+#import "Store.h"
+#import "DataManager.h"
+#import "Trip.h"
 
 @interface StoreDetailViewController ()
 
@@ -16,12 +19,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setup];
     // Do any additional setup after loading the view.
+
+}
+
+- (void)setup {
+    self.title = self.store.name;
+    if (self.store.trip) {
+        [self.addToTripButton setTitle:@"Remove From Trip" forState:UIControlStateNormal];
+    } else {
+        [self.addToTripButton setTitle:@"Add To Trip" forState:UIControlStateNormal];
+    }
+    
+    NSLog(@"%@",[[DataManager sharedDataManager] fetchTrip]);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addToTripButtonPressed:(id)sender {
+    if (self.store.trip) {
+        
+    }
 }
 
 /*

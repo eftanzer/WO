@@ -30,19 +30,19 @@
     return cell;
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-    
-    return UITableViewCellAccessoryCheckmark;
+- (IBAction)categoryButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"CategorySegue" sender:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"CategorySegue"]) {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Pass the shoppingListItem to the new view controller.
+    }
 }
-*/
+    
 
 @end

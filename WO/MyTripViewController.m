@@ -48,7 +48,7 @@
 }
 
 - (void)loadStoresForTrip {
-    self.storesInTrip = [[NSMutableArray alloc] initWithArray:[Store listOfStores]];
+    //self.storesInTrip = [[NSMutableArray alloc] initWithArray:[Store listOfStores]];
     NSLog(@"Stores: %@",self.storesInTrip);
 }
 
@@ -69,24 +69,8 @@
     }
 }
 
-- (IBAction)collapseExpandMap:(id)sender {
-    if (self.mapViewVisible) {
-        self.mapView.hidden = YES;
-        self.mapViewVisible = NO;
-    } else {
-        self.mapViewVisible = YES;
-        self.mapView.hidden = NO;
-    }
-}
-
-- (IBAction)collapseExpandStores:(id)sender {
-    if (self.storesViewVisible) {
-        self.storesView.hidden = YES;
-        self.storesViewVisible = NO;
-    } else {
-        self.storesViewVisible = YES;
-        self.storesView.hidden = NO;
-    }
+- (IBAction)showExpandMap:(id)sender {
+    NSLog(@"execute code to pop up map with full route car --> stores --> car");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
