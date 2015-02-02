@@ -26,13 +26,15 @@
 
 - (void)setup {
     self.title = self.store.name;
+    [self setAddOrRemoveFromTripButtonTitle];
+}
+
+- (void)setAddOrRemoveFromTripButtonTitle {
     if (self.store.trip) {
         [self.addToTripButton setTitle:@"Remove From Trip" forState:UIControlStateNormal];
     } else {
         [self.addToTripButton setTitle:@"Add To Trip" forState:UIControlStateNormal];
     }
-    
-    NSLog(@"%@",[[DataManager sharedDataManager] fetchTrip]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,9 +43,14 @@
 }
 
 - (IBAction)addToTripButtonPressed:(id)sender {
+    Trip *trip = [[DataManager sharedDataManager] fetchTrip];
     if (self.store.trip) {
-        
+        [trip removeStoresOnTripObject:self.store];
+    } else {
+        [trip addStoresOnTripObject:self.store];
     }
+    [[DataManager sharedDataManager] saveContext];
+    [self setAddOrRemoveFromTripButtonTitle];
 }
 
 /*

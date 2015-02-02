@@ -12,6 +12,7 @@
 #import "ProductCategory.h"
 #import "StoreListStoreTableViewCell.h"
 #import "StoreDetailViewController.h"
+#import "DataManager.h"
 
 @interface StoreListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,17 +26,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    DataManager *dataManager = (DataManager *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Store" inManagedObjectContext:appDelegate.managedObjectContext];
-    
+                                   entityForName:@"Store" inManagedObjectContext:dataManager.managedObjectContext];
     [fetchRequest setEntity:entity];
     [fetchRequest setReturnsObjectsAsFaults:NO];
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"trip" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
     
     NSError *error = nil;
     
-    self.stores = [appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.stores = [dataManager.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     if (error) {
         NSLog(@"Unable to execute fetch request.");
@@ -101,7 +102,6 @@
     
     if ([segue.identifier isEqualToString:@"StoreDetailSegue"]) {
         StoreDetailViewController *storeDetailVC = (StoreDetailViewController *)segue.destinationViewController;
-//        storeDetailVC.navigationItem.title = self.storeSelected.name;
         storeDetailVC.store = self.storeSelected;
     }
 }

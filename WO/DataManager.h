@@ -24,6 +24,7 @@
 
 // Stock methods
 - (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 // Custom methods
 - (Trip *)fetchTrip;
