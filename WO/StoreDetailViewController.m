@@ -47,7 +47,7 @@
     if (self.store.trip) {
         [trip removeStoresOnTripObject:self.store];
     } else {
-        [trip addStoresOnTripObject:self.store];
+       [trip addStoresOnTripObject:self.store];
     }
     [[DataManager sharedDataManager] saveContext];
     [self setAddOrRemoveFromTripButtonTitle];
