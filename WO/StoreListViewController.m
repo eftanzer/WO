@@ -33,7 +33,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Store"];
     [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"trip" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:dataManager.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:dataManager.managedObjectContext sectionNameKeyPath:@"primaryCategory" cacheName:@"root"];
     [self.fetchedResultsController setDelegate:self];
     NSError *error = nil;
     [self.fetchedResultsController performFetch:&error];
@@ -120,6 +120,13 @@
     id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
     
     return [sectionInfo numberOfObjects];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo name];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

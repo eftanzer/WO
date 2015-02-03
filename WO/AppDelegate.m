@@ -58,6 +58,7 @@
         Store *store1 = [[Store alloc] initWithEntity:entityStore insertIntoManagedObjectContext:self.managedObjectContext];
         store1.name = @"J Crew";
         store1.desc = @"We sell classy, overpriced, I'm-Better-Than-You-Style outfits to preppy young men & women.";
+        store1.primaryCategory = @"Designer Fashion and Sportswear";
         
         if (![store1.managedObjectContext save:&error]) {
             NSLog(@"Unable to save managed object context.");
@@ -67,6 +68,7 @@
         Store *store2 = [[Store alloc] initWithEntity:entityStore insertIntoManagedObjectContext:self.managedObjectContext];
         store2.name = @"Oakley Vault";
         store2.desc = @"Want to look like a douchebag? Buy sunglasses here!";
+        store2.primaryCategory = @"Sportswear";
         
         if (![store2.managedObjectContext save:&error]) {
             NSLog(@"Unable to save managed object context.");
@@ -76,6 +78,7 @@
         Store *store3 = [[Store alloc] initWithEntity:entityStore insertIntoManagedObjectContext:self.managedObjectContext];
         store3.name = @"Reebok";
         store3.desc = @"We sell generic sneakers in bulk to your grandfather.";
+        store3.primaryCategory = @"Designer Fashion and Sportswear";
         
         [store1 setValue:@"J Crew" forKey:@"name"];
         [store1 setValue:@"We sell classy, overpriced, I'm-Better-Than-You-Style outfits to preppy young men & women." forKey:@"desc"];

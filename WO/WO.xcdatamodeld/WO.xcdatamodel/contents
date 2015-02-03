@@ -16,6 +16,7 @@
     <entity name="Store" representedClassName="Store" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="primaryCategory" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingCategory" inverseName="stores" inverseEntity="ShoppingCategory" syncable="YES"/>
         <relationship name="linkedShoppingListItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingListItem" inverseName="linkedStores" inverseEntity="ShoppingListItem" syncable="YES"/>
         <relationship name="potentialShoppingListItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingListItem" inverseName="potentialStores" inverseEntity="ShoppingListItem" syncable="YES"/>
@@ -28,7 +29,7 @@
     <elements>
         <element name="ShoppingCategory" positionX="-54" positionY="54" width="128" height="88"/>
         <element name="ShoppingListItem" positionX="331" positionY="53" width="128" height="133"/>
-        <element name="Store" positionX="144" positionY="54" width="128" height="133"/>
+        <element name="Store" positionX="144" positionY="54" width="128" height="150"/>
         <element name="Trip" positionX="135" positionY="99" width="128" height="73"/>
     </elements>
 </model>
