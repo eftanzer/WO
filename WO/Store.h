@@ -2,7 +2,7 @@
 //  Store.h
 //  WO
 //
-//  Created by Ezra on 1/24/15.
+//  Created by Ezra on 2/2/15.
 //  Copyright (c) 2015 CozE. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * primaryCategory;
 @property (nonatomic, retain) NSSet *categories;
 @property (nonatomic, retain) NSSet *linkedShoppingListItems;
 @property (nonatomic, retain) NSSet *potentialShoppingListItems;

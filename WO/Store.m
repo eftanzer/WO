@@ -2,7 +2,7 @@
 //  Store.m
 //  WO
 //
-//  Created by Ezra on 1/24/15.
+//  Created by Ezra on 2/2/15.
 //  Copyright (c) 2015 CozE. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 
 @dynamic desc;
 @dynamic name;
+@dynamic primaryCategory;
 @dynamic categories;
 @dynamic linkedShoppingListItems;
 @dynamic potentialShoppingListItems;
